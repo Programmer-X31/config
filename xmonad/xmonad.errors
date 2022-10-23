@@ -1,6 +1,0 @@
-$ ghc --make xmonad.hs -i -ilib -fforce-recomp -main-is main -dynamic -v0 -outputdir /home/sachin/.xmonad/build-x86_64-linux -o /home/sachin/.xmonad/xmonad-x86_64-linux
-
-xmonad.hs:653:3: error: parse error on input ‘where’
-    |
-653 |   where 
-    |   ^^^^^
