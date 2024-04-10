@@ -1,6 +1,6 @@
 configuration{
     modi: "run,drun,window";
-    icon-theme: "Oranchelo";
+    icon-theme: "Papirus-Dark";
     show-icons: true;
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
@@ -14,4 +14,6 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "catppuccin-macchiato"
+//@theme "catppuccin-mocha"
+//@theme "~/.config/rofi/sidebar-v2.rasi"
+@theme "~/.config/rofi/Arc-Dark.rasi"

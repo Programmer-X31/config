@@ -1,6 +1,9 @@
 module Colors.DoomOne where
 
+{-# OPTIONS_GHC -dynamic #-}
 import XMonad
+
+
 
 colorScheme = "doom-one"
 

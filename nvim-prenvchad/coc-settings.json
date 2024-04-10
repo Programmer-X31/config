@@ -1,0 +1,29 @@
+{
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                },
+
+                "client": {
+                    "snippetSupport": true
+                }
+            }
+        }
+    },
+    "prettier.tabWidth": 4,
+    "emmet.includeLanguages": { "javascript": "javascriptreact" },
+    "emmet.priority": 100,
+    "emmet.showExpandedAbbreviation": "always",
+    "coc.preferences.formatOnSave": true
+}

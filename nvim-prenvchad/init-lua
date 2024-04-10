@@ -1,0 +1,100 @@
+vim.opt.expandtab = false
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.autoindent = true
+vim.opt.hidden = true
+vim.opt.mouse = "a"
+vim.opt.encoding="utf-8"
+vim.g.mapleader = " "
+vim.opt.wrap = false
+vim.opt.number = true
+--vim.cmd([[colorscheme onedark]])
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = '│ ',
+  extends = '⟩',
+  precedes = '⟨',
+  trail = '·'
+}
+
+
+local HOME = os.getenv("HOME")
+local Plug = vim.fn['plug#']
+
+vim.call('plug#begin', '~/.config/nvim/plugged')
+-- Themes
+  Plug 'rafi/awesome-vim-colorschemes'
+  Plug 'sainnhe/gruvbox-material'
+  Plug 'drewtempelmeyer/palenight.vim'
+  Plug 'folke/tokyonight.nvim'
+  Plug 'navarasu/onedark.nvim'
+
+-- Looks
+  Plug 'preservim/nerdcommenter'
+  Plug 'numToStr/Comment.nvim'
+  Plug 'itchyny/lightline.vim'
+
+-- File Management
+  Plug 'nvim-tree/nvim-web-devicons'
+  Plug 'nvim-tree/nvim-tree.lua'
+
+-- Git Clients
+  Plug 'tpope/vim-fugitive'
+
+-- Doom Emacs
+  Plug 'folke/which-key.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug ('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
+  Plug 'glepnir/dashboard-nvim'
+
+-- Syntax
+  Plug 'uiiaoo/java-syntax.vim'
+  Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+
+-- Working With Brackets
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'tpope/vim-surround'
+  Plug 'luochen1990/rainbow'
+
+-- HTML and JSX
+  Plug 'alvan/vim-closetag'
+  Plug 'yuezk/vim-js'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+
+-- Auto Completion
+  Plug ('neoclide/coc.nvim', {branch = 'release'})
+-- let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-pyright', 'coc-java'] --'coc-prettier']
+
+
+-- Snippets
+  Plug 'sirver/ultisnips'
+  Plug 'honza/vim-snippets'
+
+-- FZF
+  Plug ('junegunn/fzf', { dir = '~/.fzf', ['do'] = vim.fn['fzf#install'] })
+  Plug 'junegunn/fzf.vim'
+
+-- Tagbar
+  Plug 'preservim/tagbar'
+
+--C support
+  Plug 'WolfgangMehner/c-support'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'justinmk/vim-syntax-extra'
+  Plug 'bfrg/vim-cpp-modern'
+vim.call('plug#end')
+
+function map(mode, shortcut, command)
+  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
+end
+
+function nmap(shortcut, command)
+  map('n', shortcut, command)
+end
+
+function imap(shortcut, command)
+  map('i', shortcut, command)
+end
+
