@@ -1,0 +1,56 @@
+conky.config = {
+    background = true,
+    uppercase = false,
+    override_utf8_locale = true,
+    default_color = '#cdd6f4',
+
+    alignment = 'bottom_right',
+    gap_x = 35,
+    gap_y = 100,
+
+	use_spacer = 'none',						-- adds spaces around certain objects to align - default none
+    minimum_width = 350,
+    maximum_width = 650,
+	minimum_height = 115,
+
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_argb_visual = true,
+    own_window_transparent = false,
+	own_window_colour = '1e1e2e',
+	own_window_argb_value = 200,
+    own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',
+
+    double_buffer = true,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = true,
+    draw_graph_borders = false,
+
+	border_width = 0, 							-- border width in pixels
+    no_buffers = true,
+    use_xft = true,
+    xftalpha = 0.1,
+    cpu_avg_samples = 2,
+    update_interval = 1,
+    total_run_times = 0,
+    imlib_cache_size = 0,
+};
+
+conky.text = [[
+# --- Get Spotify Cover ---
+${if_running spotify}
+	${exec ~/.conky/conky-spotify/scripts/cover.sh}
+	${image ~/.conky/conky-spotify/current/current.jpg -p 2,0 -s 112x112}
+# ${image ~/.conky/conky-spotify/background.png -p 0,0 -s 112x112}
+# --- Show now playing information ---
+	${voffset -80}
+	${goto 132}${font Segoe UI:bold:size=12}${exec ~/.conky/conky-spotify/scripts/title.sh}
+	${voffset -25}
+	${goto 132}${font Segoe UI:size=9}${exec ~/.conky/conky-spotify/scripts/artist.sh}
+	${voffset -15}
+	${goto 132}${font Segoe UI:size=10}${exec ~/.conky/conky-spotify/scripts/album.sh}
+	${voffset -25}
+${endif}
+]];
+
